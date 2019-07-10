@@ -7,5 +7,4 @@ for ($i=0; $i <= 100 ; $i++) {
     $sumOfSquare += $i * $i;
     $squareOfSum += $i;
 }
-$difference = ($squareOfSum * $squareOfSum) - $sumOfSquare;
-echo $difference. "\n";
+echo ($squareOfSum * $squareOfSum) - $sumOfSquare;
