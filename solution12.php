@@ -15,15 +15,30 @@
 
 
 // What is the value of the first triangle number to have over five hundred divisors?
-$limit = 5;
-$first = 0;
+$limit = 500;
 $num = 1;
 $triangleNumbers = array();
-$divisors = 0;
-for ($i = 1; $i <= 10; $i++) {
+for ($i = 1; $i <= 10000000; $i++) {
     $num = $i * ($i + 1) / 2;
     $triangleNumbers[] =  $num;
     $num += 1;   
 
 }
-print_r($triangleNumbers);
+$max = sqrt(count($triangleNumbers));
+for ($k=0; $k < $max; $k++) { 
+    $divisors = 1;
+    for ($j=1; $j < $triangleNumbers[$k] ; $j++) { 
+        if($triangleNumbers[$k] % $j == 0){
+            $divisors = $divisors + 1;
+            // echo "number:".$triangleNumbers[$k]. "\n";
+            // echo "Div=" .$divisors . "\n";
+        }
+        if($limit <= $divisors){
+            echo "FOUND FIRST" . $triangleNumbers[$k];
+            break 2;
+
+        }
+    }
+   
+}
+
