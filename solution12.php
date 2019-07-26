@@ -25,36 +25,38 @@
 
 //         }
 //     }
-   
+
 // }
 $limit = 500;
-$counter=1;
+$counter = 1;
 
 do {
 	$currentTriangle = getTriangle($counter);
 
 	$countFactors = getCountFactors($currentTriangle);
-	
+
 	$counter++;
 } while ($countFactors <= $limit);
 
 echo $currentTriangle;
 
 
-function getTriangle($number) {
+function getTriangle($number)
+{
 	return $number * ($number + 1) / 2;
 }
 
 
-function getCountFactors($number) {
+function getCountFactors($number)
+{
 	$countFactors = 0;
 	$root = sqrt($number);
-	
+
 	for ($i = 1; $i <= $root; $i++) {
 		if ($number % $i == 0) {
 			$countFactors += 2;
 		}
 	}
-	
+
 	return $countFactors;
 }

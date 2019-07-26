@@ -29,14 +29,14 @@ $numbers = array();
 $max = 0;
 
 $lines = explode("\r\n", $grid);
- 
-foreach($lines as $line) {
+
+foreach ($lines as $line) {
 	$digits = explode(" ", $line);
-	
+
 	$numbers[] = array();
-	
-	foreach($digits as $digit) {
-		array_push($numbers[count($numbers)-1], $digit);
+
+	foreach ($digits as $digit) {
+		array_push($numbers[count($numbers) - 1], $digit);
 	}
 }
 
@@ -47,11 +47,10 @@ for ($i = 0; $i < count($numbers); $i++) {
 		for ($k = 0; $k < 4; $k++) {
 			$product *= $numbers[$i][$j + $k];
 		}
-		
+
 		if ($product > $max) {
 			$max = $product;
-        }
-       
+		}
 	}
 }
 
@@ -62,7 +61,7 @@ for ($i = 0; $i < count($numbers) - 3; $i++) {
 		for ($k = 0; $k < 4; $k++) {
 			$product *= $numbers[$i + $k][$j];
 		}
-		
+
 		if ($product > $max) {
 			$max = $product;
 		}
@@ -76,7 +75,7 @@ for ($i = 0; $i < count($numbers) - 3; $i++) {
 		for ($k = 0; $k < 4; $k++) {
 			$product *= $numbers[$i + $k][$j + $k];
 		}
-		
+
 		if ($product > $max) {
 			$max = $product;
 		}
@@ -90,7 +89,7 @@ for ($i = 3; $i < count($numbers); $i++) {
 		for ($k = 0; $k < 4; $k++) {
 			$product *= $numbers[$i - $k][$j + $k];
 		}
-		
+
 		if ($product > $max) {
 			$max = $product;
 		}

@@ -3,7 +3,7 @@
 // one hundred natural numbers and the square of the sum.
 $sumOfSquare = 0;
 $squareOfSum = 0;
-for ($i=0; $i <= 100 ; $i++) { 
+for ($i = 0; $i <= 100; $i++) {
     $sumOfSquare += $i * $i;
     $squareOfSum += $i;
 }

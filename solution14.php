@@ -15,7 +15,6 @@ function collatzSequence($number)
             $cnt++;
             if ($number == 1) {
                 return $cnt;
-                
             }
         } else {
             // odd (3n +1)
@@ -23,20 +22,17 @@ function collatzSequence($number)
             $cnt++;
             if ($number == 1) {
                 return $cnt;
-                
             }
         }
     }
 }
-$max= 0;
-for ($i=1; $i < 1000000; $i++) { 
-   
+$max = 0;
+for ($i = 1; $i < 1000000; $i++) {
+
     $chain = collatzSequence($i);
-    if($chain > $max){
+    if ($chain > $max) {
         $max = $chain;
-        echo "NUMBER: " .$i;
-        echo " max: " .$max ."\n";
+        echo "NUMBER: " . $i;
+        echo " max: " . $max . "\n";
     }
-
 }
-
